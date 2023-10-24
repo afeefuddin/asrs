@@ -1,0 +1,9 @@
+.searchboxStyle{
+    border-radius: 1rem;
+    width: 33%;
+    height: 2rem;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    text-align: center;
+}
