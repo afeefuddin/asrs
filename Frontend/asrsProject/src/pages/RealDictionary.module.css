@@ -1,9 +1,33 @@
 .searchboxStyle{
     border-radius: 1rem;
-    width: 33%;
+    width: 100%;
     height: 2rem;
     background: transparent;
-    border: 1px solid white;
+    border: 1px solid transparent;
     color: white;
     text-align: center;
+}
+.searchboxStyle:focus{
+    outline: 0px solid transparent;
+}
+.logoImage{
+    height: 30px;
+}
+.borderbox{
+    border: 1px solid white;
+    display: flex;
+    flex-direction: row;
+    width: 33%;
+    border-radius: 1rem;
+}
+.seachlogo{
+    width: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 15px;
+}
+.seachlogo:hover{
+    cursor: pointer;
 }
