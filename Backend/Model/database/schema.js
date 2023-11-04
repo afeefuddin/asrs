@@ -10,6 +10,17 @@ const DictionarySchema = new mongoose.Schema({
         required : true
     },
 });
+const AdminSchema = new mongoose.Schema({
+    username :{
+        type: String,
+        required : true,
+    },
+    password :{
+        type: String,
+        required : true
+    }
+});
 
 const Dictionary = mongoose.model('RealDictionary',DictionarySchema);
-module.exports = Dictionary;
+const Admin = mongoose.model('Admin',AdminSchema)
+module.exports = {Dictionary,Admin};

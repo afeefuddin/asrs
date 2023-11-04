@@ -1,8 +1,10 @@
 const {getMeaning} = require('../Model/api/dictionary')
-const findMeaning = require('../Model/database/findMeaning');
+const {findMeaning,createMeaning }= require('../Model/database/Meaning');
+const { authenticateWebToken } = require('./authenticateAdmin');
 async function getRealMeaning(req,res){
     try{
     let word = req.params.word
+    word = word.toLowerCase();
     const AsrsMeaning = await findMeaning(word);
     console.log(AsrsMeaning.length)
     if(AsrsMeaning.length===0){
@@ -35,4 +37,24 @@ catch(error){
     res.status(500).json({});
 }
 }
-module.exports = {getRealMeaning};
+async function createRealMeaning(req,res){
+    const token = req.get("token");
+    console.log(req.get("id"))
+    const isAdmin = await authenticateWebToken(token);
+    if(isAdmin){
+        let word = req.body.word;
+        word = word.toLowerCase();
+        const meaning = req.body.meaning;
+        const create = await createMeaning(word,meaning)
+        if(create){
+            res.status(200).json({Message:"Meaning Created Succesfully"});
+        }
+        else{
+            res.status(404).json({error});
+        }
+    }
+    else{
+        res.status(404).json({error: "admin not verified"});
+    }
+}
+module.exports = {getRealMeaning,createRealMeaning};
