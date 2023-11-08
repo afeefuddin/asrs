@@ -21,6 +21,18 @@ const AdminSchema = new mongoose.Schema({
     }
 });
 
+const  FactSchema = new mongoose.Schema({
+    id : {
+        type : Number,
+        required : true
+    },
+    fact : {
+        type : String,
+        required : true
+    }
+});
+
 const Dictionary = mongoose.model('RealDictionary',DictionarySchema);
-const Admin = mongoose.model('Admin',AdminSchema)
-module.exports = {Dictionary,Admin};
+const Admin = mongoose.model('Admin',AdminSchema);
+const Fact = mongoose.model('83fact',FactSchema);
+module.exports = {Dictionary,Admin,Fact};

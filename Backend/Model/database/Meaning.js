@@ -23,4 +23,8 @@ async function findMeaning(word){
     console.log(meaning)
     return meaning;
 }
-module.exports = {findMeaning,createMeaning};
+async function getTotalMeaning(){
+    const count = await Dictionary.countDocuments({});
+    return count;
+}
+module.exports = {findMeaning,createMeaning,getTotalMeaning};

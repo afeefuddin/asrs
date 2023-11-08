@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat&family=Open+Sans:ital,wght@0,300;1,500&family=Poppins&display=swap');
+
+.navBar{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 14vh;
+}
+
+.logoImage{
+    height: 35px;
+}
+.title{
+    background-image: linear-gradient(to right,rgb(0, 255, 153),rgb(176, 42, 244));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 80%;
+}
+.card{
+    display: flex;
+    color: white;
+    flex-direction: column;
+
+    height: 250px;
+    width: clamp(0vw,600px,100%);
+    
+}
+.cardTitle{
+    background: #007effd6;
+    color: white;
+    width: fit-content;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 5px;
+    font-family: 'Poppins', sans-serif;
+
+}
+.cardContent{
+    background-color:#007effd6;
+    height: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    word-wrap: break-word;
+    padding: 20px;
+    font-family: 'Open Sans', sans-serif;
+
+}
+.innerElem{
+    border: 1px solid white;
+    padding: 10px;
+    height: 100%;
+    border-radius: 5px;
+}
+.factCard{
+    background-color: rgb(43 52 145/0.2);
+    margin: 8px;
+    padding: 15px;
+    border-radius: 5px;
+}
+@media (width<1000px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .title{
+        font-size: 40px;
+    }
+}
+@media (width<600px) {
+    .title{
+        font-size: 30px;
+    }
+    .navBar{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .logo{
+        justify-content: center;
+        margin-left: 0;
+        padding: 10px;
+    }
+}

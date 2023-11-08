@@ -29,6 +29,7 @@
     background-image: linear-gradient(to right,#06f,#3ccf91);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    font-size: 2rem;
 }
 
 .rightContainer{

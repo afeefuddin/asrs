@@ -5,7 +5,9 @@ function MainPage(){
     return (
         <>
         <Navbar />
+        <div style={{border: '0.5px solid white'}}></div>
         <Intro />
+        <div style={{border: '0.5px solid white'}}></div>
         <About />
         </>
     )

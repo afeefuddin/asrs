@@ -26,7 +26,7 @@ function RealDictionary(){
             return;
         }
         try{
-        const res = await fetch(`http://localhost:8000/${searchbox}`);
+        const res = await fetch(`http://localhost:8000/dictionary/${searchbox}`);
         if (res.status === 404) {
             setMeaning({"1": "Oh Come on this is not a word"});
             setWrongWord(true);
