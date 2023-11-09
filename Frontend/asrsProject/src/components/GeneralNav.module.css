@@ -1,0 +1,34 @@
+.navBar{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 14vh;
+}
+
+.logoImage{
+    height: 35px;
+}
+.title{
+    background-image: linear-gradient(to right,rgb(0, 255, 153),rgb(176, 42, 244));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+@media (width<1000px) {
+    .title{
+        font-size: 40px;
+    }
+}
+@media (width<600px) {
+    .title{
+        font-size: 30px;
+    }
+    .navBar{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .logo{
+        justify-content: center;
+        margin-left: 0;
+        padding: 10px;
+    }
+}

@@ -31,8 +31,31 @@ const  FactSchema = new mongoose.Schema({
         required : true
     }
 });
+const ResearchPaperSchema = new mongoose.Schema({
+    title : {
+        type: String,
+        required : true,
+    },
+    description : {
+        type : String,
+        required : true,
+    },
+    image : {
+        type : String,
+        required : true,
+    },
+    date : {
+        type : String,
+        required : true,
+    },
+    views : {
+        type : String,
+        default : 0,
+    }
+})
 
+const Papers = mongoose.model('Papers',ResearchPaperSchema);
 const Dictionary = mongoose.model('RealDictionary',DictionarySchema);
 const Admin = mongoose.model('Admin',AdminSchema);
 const Fact = mongoose.model('83fact',FactSchema);
-module.exports = {Dictionary,Admin,Fact};
+module.exports = {Dictionary,Admin,Fact,Papers};

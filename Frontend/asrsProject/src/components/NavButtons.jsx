@@ -3,7 +3,7 @@ const {navbuttons} = styles;
 function NavButtons(props){
     return(
         <div>
-            <button className={navbuttons}>{props.content}</button>
+            <button className={navbuttons} onClick={props.onClick}>{props.content}</button>
         </div>
     )
 }

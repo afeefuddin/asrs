@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import styles from "./RealDictionary.module.css"
 import ASRSlogo from "../assets/ASRSlogo.png"
 import seach from "../assets/search.png"
+import Loader from "../components/Loader";
 const { searchboxStyle,logoImage,borderbox,seachlogo } = styles;
 function RealDictionary(){
     const [searchbox,changesearch] = useState("")
@@ -83,18 +84,18 @@ return(
     </div>
     </div>
     <div className="flex justify-center items-center h-3/4 ">
-    {isLoading &&  <div className="text-cyan-50">Loading...</div>}
-    <div className="m-10">
+    {isLoading &&  <Loader />}
+    <div className="m-10 overflow-y-scroll w-fit">
   {!isLoading && !wrongWord &&
     Object.keys(meaning).map((key) => (
       <div
         key={key}
-        className="max-w-sm w-4/12 min-w-max p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+        className= " mt-4 w-full min-w-max p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
       >
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <h5 className="mb-2 text-2xl  tracking-tight  text-gray-700 dark:text-gray-400">
           Real Meaning
         </h5>
-        <p className="text-2xl font-normal text-gray-700 dark:text-gray-400">
+        <p className="text-2xl font-bold text-gray-900 dark:text-white">
           {meaning[key]}
         </p>
       </div>

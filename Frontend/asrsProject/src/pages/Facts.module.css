@@ -85,3 +85,33 @@
         padding: 10px;
     }
 }
+@media (width<500px) {
+    .card{
+
+        height: 200px;
+
+        
+    }
+    .cardTitle{
+        font-size: 13px;
+    }
+}
+
+@media (width<300px) {
+    .card{
+
+        height: 180px;
+
+        
+    }
+    .cardContent{
+        padding: 10px;
+    }
+    .cardTitle{
+        font-size: 13px;
+        width: 100%;
+    }
+    .cardContent{
+        border-top-right-radius: 0px;
+    }
+}

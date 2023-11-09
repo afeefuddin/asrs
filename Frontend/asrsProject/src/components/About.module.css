@@ -1,15 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat&family=Open+Sans:wght@300&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&family=Lato&family=Montserrat&family=Open+Sans:ital,wght@0,300;1,500&family=Poppins&family=Roboto&family=Ubuntu&display=swap');
 .container{
     display: flex;
     justify-content: center;
     min-height: 20vh;
     background:#161616;
+    margin-top: 70px;
+    margin-bottom: 70px;
 }
 .aboutContainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: clamp(20%,50rem,80%);
 
 }
 .aboutHeading{
@@ -17,7 +20,23 @@
     background-image: linear-gradient(to right,#06f,#5132c0);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    font-size: 40px;
+    margin-bottom: 10px;
 }
 .para{
     color: white;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+.textMain{
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+}
+.text{
+    background-image: linear-gradient(to right,rgb(0, 255, 153),rgb(176, 42, 244));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-family: 'JetBrains Mono', monospace;
+    
 }

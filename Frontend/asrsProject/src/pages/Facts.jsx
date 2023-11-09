@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Facts.module.css'
 import ASRSlogo from "../assets/ASRSlogo.png"
+import GeneralNav from '../components/GeneralNav';
+import Loader from '../components/Loader';
 
 const {card,cardTitle,cardContent,navBar,logoImage,title,innerElem,factCard,container,logo} = styles;
 
 function Facts() {
     const[fom,setFom]  = useState('');
-    const[facts,setFacts] = useState(['a','lorem32']);
+    const[facts,setFacts] = useState([]);
     const[errorFacts,setErrorFacts] = useState(false);
     async  function fetchApi(){
+        if(fom!==''){
+            return;
+        }
         try {
             let res = await fetch(`http://localhost:8000/facts`,{
                 headers : {
@@ -54,15 +59,21 @@ function Facts() {
                 setFacts(filterFact);
       }, [fom]);
     
+      if(fom===''){
+        return(<>
+            <Loader />
+        </>)
+      }
   return (
     <>
     <div className='h-screen'>
 
    
-    <div className={navBar}>
+    {/* <div className={navBar}>
         <div className={`flex items-center ml-8 ${logo}`}><img src={ASRSlogo} alt=""   className={logoImage} /></div>
         <div className={` text-5xl flex items-center justify-center ${title}`}>83% FACTS</div>
-    </div>
+    </div> */}
+    <GeneralNav heading='83% Facts' />
 
 
     <div className={container}>

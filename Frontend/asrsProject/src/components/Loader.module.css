@@ -1,0 +1,46 @@
+.color {
+    z-index:-2;
+    height:90px;
+    width:90px;
+    border-radius:50%;
+    position:absolute;
+    top:calc(50% - 45px);
+    left:calc(50% - 45px);
+    animation: color 10s linear infinite;
+  }
+  
+  .border {
+    background: linear-gradient(transparent, #161616 90%);
+    z-index:-1;
+    height:100px;
+    width:100px;
+    border-radius:50%;
+    position:absolute;
+    top:calc(50% - 50px);
+    left:calc(50% - 50px);
+    animation: loading-border 2s linear infinite;
+  }
+  
+  .circle {
+    height:60px;
+    width:60px;
+    border-radius:50%;
+    background-color:#161616;
+    position:absolute;
+    top:calc(50% - 30px);
+    left:calc(50% - 30px);
+  }
+  
+  @keyframes loading-border {
+    0%{transform:rotate(0deg);}
+    100% {transform:rotate(360deg);}
+  }
+  
+  @keyframes color {
+    0%{background-color: blue}
+    20%{background-color: rgb(0, 255, 153)}
+    40%{background-color:yellow}
+    60%{background-color: rgb(176, 42, 244)}
+    80% {background-color:purple}
+    100%{background-color: blue}
+  }

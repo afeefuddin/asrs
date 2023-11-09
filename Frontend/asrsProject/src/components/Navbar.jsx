@@ -1,26 +1,41 @@
+import { useNavigate } from 'react-router-dom';
+
 import styles from './Navbar.module.css';
 import Button from './Button';
 import NavButtons from './NavButtons';
 import Buttondivider from './Buttondivider';
+import ASRSlogo from "../assets/ASRSlogo.png"
+
 const {
     navBar,
-    title,navBox, middleButtons
+    logo,navBox, middleButtons,logoImage
   } = styles;
 function Navbar(){
+    const navigate = useNavigate();
     return(
         <>
         <div>
             <div className={navBar}>
                 <div className={navBox}>
-                <div className={title}>ASRS</div>
+                <div className={`flex items-center ml-8 ${logo}`}><img src={ASRSlogo} alt="" className={logoImage} /></div>
                 <div className={middleButtons}>
-                <NavButtons content ="83% Facts"></NavButtons>
+                <NavButtons onClick={()=>{
+                    navigate('/facts')
+                }} content ="83% Facts"></NavButtons>
+
                 <Buttondivider />
-                <NavButtons content ="Real Dictionary"></NavButtons>
+
+                <NavButtons content ="Real Dictionary" onClick={()=>{
+                    navigate('/realdictionary')
+                }} ></NavButtons>
+
                 <Buttondivider />
-                <NavButtons content ="Research papers"></NavButtons>
-                <Buttondivider />
-                <NavButtons content ="Sarcasm 101"></NavButtons>
+
+                <NavButtons content ="Research papers"
+                 onClick={()=>{
+                    navigate('/research/papers')
+                }}
+                 ></NavButtons>
                 </div>
                 <Button content ="Let's Talk"></Button>
                 </div>
