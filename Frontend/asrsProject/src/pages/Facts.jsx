@@ -15,7 +15,7 @@ function Facts() {
             return;
         }
         try {
-            let res = await fetch(`http://localhost:8000/facts`,{
+            let res = await fetch(`https://asrs.vercel.app/facts`,{
                 headers : {
                     'n' : '10'
                 }
