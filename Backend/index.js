@@ -8,9 +8,14 @@ const findMeaning = require('./Model/database/Meaning');
 const DB = require('./Model/database/connectDB');
 const router = require('./Routes/route');
 
-app.use(cors({
-    origin: "*"
-}))
+const corsConfig = {
+    origin: '',
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE']
+}
+app.use(cors(corsConfig))
+app.options("", cors(corsConfig))
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
