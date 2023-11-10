@@ -16,7 +16,7 @@ function ResearchPage() {
 
   const getPapers = async() =>{
     try{
-    let res = await fetch('http://localhost:8000/researchpapers');
+    let res = await fetch('https://asrs.vercel.app/researchpapers');
     res = await res.json();
     setPapers(res.papers);
     }
@@ -27,7 +27,7 @@ function ResearchPage() {
   const handleClick = async(e)=>{
     const id = e.target.id;
     try{
-      let res = await fetch(`http://localhost:8000/researchpaper/${id}`);
+      let res = await fetch(`https://asrs.vercel.app/researchpaper/${id}`);
       res = await res.json();
       setFullPaper(res.paper);
       toggleOverlay();
