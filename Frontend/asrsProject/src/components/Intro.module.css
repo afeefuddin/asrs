@@ -38,3 +38,28 @@
     align-items: center;
 }
 /* cube */
+
+@media (width<1000px){
+    .heading{
+        font-size: 1.5rem;
+    }
+    .rightButton{
+        display: none;
+    }
+}
+@media (width<500px){
+    .rightContainer{
+        display: none;
+    }
+    .gridContainer{
+       display: flex;
+        height: 100%;
+        margin: 0px 5vh;
+    }
+    .container{
+        height: 60vh;
+    }
+    .leftContainer{
+        gap: 20px;
+    }
+}

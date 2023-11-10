@@ -3,3 +3,10 @@
     width: 5px;
     background-color: #0181dd;
 }
+@media (width<450px) {
+    .divider{
+        margin-left: 2px;
+        margin-right: 2px ;
+        width: 3px;
+    }
+}

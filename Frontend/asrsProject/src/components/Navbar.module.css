@@ -22,3 +22,21 @@
     display: flex;
     flex-direction: row;
 }
+@media (width<750px){
+    .rightButton{
+        display: none;
+    }
+}
+@media (width<630px){
+    .navBox{
+        flex-direction: column;
+        margin-top: 10px;
+        height: 80%;
+    }
+    .logo{
+        margin-left: 0px;
+    }
+    .navBar{
+        height: 6rem;
+    }
+}
