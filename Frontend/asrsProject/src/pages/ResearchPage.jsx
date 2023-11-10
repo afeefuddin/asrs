@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import GeneralNav from '../components/GeneralNav'
 import { useEffect } from 'react';
 import Overlay from '../components/Overlay';
+import Loader from '../components/Loader';
 
 function ResearchPage() {
-  const [papers, setPapers] = useState([{image:"https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",title : " YYyyyf",date:"hflkads",_id:"2525525"},
-  {image:"https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",title : " How to Be awesome",date:"hflkads"}]);
+  const [papers, setPapers] = useState([]);
  
   const [fullPaper,setFullPaper] = useState({})
   const [isOpen,setIsOpen] = useState(false);
@@ -16,7 +16,7 @@ function ResearchPage() {
 
   const getPapers = async() =>{
     try{
-    let res = await fetch('https://asrs.vercel.app/researchpapers');
+    let res = await fetch('https://asrs-api.vercel.app/researchpapers');
     res = await res.json();
     setPapers(res.papers);
     }
@@ -27,7 +27,7 @@ function ResearchPage() {
   const handleClick = async(e)=>{
     const id = e.target.id;
     try{
-      let res = await fetch(`https://asrs.vercel.app/researchpaper/${id}`);
+      let res = await fetch(`https://asrs-api.vercel.app/researchpaper/${id}`);
       res = await res.json();
       setFullPaper(res.paper);
       toggleOverlay();
@@ -41,7 +41,11 @@ function ResearchPage() {
   useEffect(()=>{
     getPapers();
   },[])
-  
+  if(papers.length===0){
+    return(
+      <Loader/>
+    )
+  }
 
   return (
     <div>

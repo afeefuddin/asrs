@@ -27,7 +27,7 @@ function RealDictionary(){
             return;
         }
         try{
-        const res = await fetch(`https://asrs.vercel.app/dictionary/${searchbox}`);
+        const res = await fetch(`https://asrs-api.vercel.app/dictionary/${searchbox}`);
         if (res.status === 404) {
             setMeaning({"1": "Oh Come on this is not a word"});
             setWrongWord(true);
