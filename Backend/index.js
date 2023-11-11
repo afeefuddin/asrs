@@ -9,7 +9,7 @@ const DB = require('./Model/database/connectDB');
 const router = require('./Routes/route');
 
 app.use(cors({
-  origin: 'https://asrs.vercel.app/'
+  origin: 'https://asrs.vercel.app'
 }));
 
 app.use(express.urlencoded({ extended: true }));
