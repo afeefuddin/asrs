@@ -8,9 +8,23 @@ const findMeaning = require('./Model/database/Meaning');
 const DB = require('./Model/database/connectDB');
 const router = require('./Routes/route');
 
-app.use(cors({
-  origin: 'https://asrs.vercel.app'
-}));
+const allowedOrigins = ['https://asrs.vercel.app'];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Check if the request origin is in the allowedOrigins array
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true, // enable set cookie
+    optionsSuccessStatus: 204,
+  })
+);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
