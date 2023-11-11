@@ -8,7 +8,9 @@ const findMeaning = require('./Model/database/Meaning');
 const DB = require('./Model/database/connectDB');
 const router = require('./Routes/route');
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://asrs.vercel.app/'
+}));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
