@@ -26,3 +26,24 @@
     display: flex;
     justify-content: center;
 }
+@media (width<500px) {
+    .SearchBoxInput{
+        width: 20rem;
+    }
+    .SearchBox{
+        display: flex;
+        justify-content: center;
+    }
+    .textContainer{
+        font-size: 20px;
+    }
+}
+@media (width<350px) {
+    .SearchBoxInput{
+        width: 17rem;
+    }
+
+    .textContainer{
+        font-size: 18px;
+    }
+}

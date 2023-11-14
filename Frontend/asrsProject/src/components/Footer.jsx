@@ -4,9 +4,9 @@ import { useNavigate, Link } from 'react-router-dom'
 function Footer() {
     const navigate = useNavigate();
     return (
-        <div className='flex items-center justify-center mt-16 mb-16'>
+        <div className='flex items-center justify-center mt-16 mb-16 ml-4 sm:ml-4 lg:ml-0 '>
             <div className='flex flex-col'>
-                <div className='grid grid-cols-3 gap-4'>
+                <div className='grid grid-cols-2 lg:grid-cols-3  gap-4'>
                     <div className='flex flex-col'>
                         <div className='text-2xl text-white'>Features</div>
                         <div className='flex flex-col text-white opacity-50 mt-2 gap-1'>

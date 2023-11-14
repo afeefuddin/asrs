@@ -13,7 +13,8 @@ function ResearchPage() {
   const toggleOverlay = () => {
     setIsOpen(!isOpen);
   };
-
+  // https://asrs-api.vercel.app
+  // http://localhost:8000
   const getPapers = async() =>{
     try{
     let res = await fetch('https://asrs-api.vercel.app/researchpapers');
@@ -51,7 +52,7 @@ function ResearchPage() {
     <div>
       <GeneralNav heading='Real Research' />
 
-      <div className='flex flex-col items-center justify-center mt-8  sm:mr-8 sm:ml-8 lg:ml-16 lg:mr-16'>
+      <div className='flex flex-col items-center justify-center mt-8   mr-8 ml-8 lg:ml-16 lg:mr-16'>
         <div className='flex justify-start w-full text-lime-100 sm:text-xl lg:text-3xl'>Featured Papers</div>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 mt-12' >
           {

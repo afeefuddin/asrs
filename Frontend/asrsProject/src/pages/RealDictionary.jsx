@@ -32,7 +32,8 @@ function RealDictionary(){
             setMeaning({"1": "Oh Come on this is not a word"});
             setWrongWord(true);
           } else{
-        const val = await res.json();
+        let val = await res.json();
+        val = Object.fromEntries(Object.entries(val).slice(0, 3));
         console.log("done")
         setMeaning(val);
         console.log(meaning)
@@ -85,17 +86,17 @@ return(
     </div>
     <div className="flex justify-center items-center h-3/4 ">
     {isLoading &&  <Loader />}
-    <div className="m-10 overflow-y-scroll w-fit">
+    <div className="m-10 overflow-y-scroll overflow-x-hidden w-fit">
   {!isLoading && !wrongWord &&
     Object.keys(meaning).map((key) => (
       <div
         key={key}
-        className= " mt-4 w-full min-w-max p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+        className= " mt-4 w-full  p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
       >
         <h5 className="mb-2 text-2xl  tracking-tight  text-gray-700 dark:text-gray-400">
           Real Meaning
         </h5>
-        <p className="text-2xl font-bold text-gray-900 dark:text-white">
+        <p className="text-2xl font-bold text-gray-900 dark:text-white w-full whitespace-normal overflow-x-hidden">
           {meaning[key]}
         </p>
       </div>
